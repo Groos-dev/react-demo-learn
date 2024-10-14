@@ -1,13 +1,14 @@
 import { useRef } from "react";
 import "./App.css";
+import InputComponent from "./InputComponent";
 function App() {
-    const inputElement = useRef(null);
+    const inputComponent = useRef(null);
     function focusInput() {
-        inputElement.current.focus();
+        inputComponent.current.focus();
     }
     return (
         <>
-            <input type="text" ref={inputElement} />
+            <InputComponent type="text" ref={inputComponent} />
             <button onClick={focusInput}>focus</button>
         </>
     );

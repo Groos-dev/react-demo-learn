@@ -1,7 +1,16 @@
+import { useRef } from "react";
 import "./App.css";
-import Timer from "./Timer/Index";
 function App() {
-    return <Timer></Timer>;
+    const inputElement = useRef(null);
+    function focusInput() {
+        inputElement.current.focus();
+    }
+    return (
+        <>
+            <input type="text" ref={inputElement} />
+            <button onClick={focusInput}>focus</button>
+        </>
+    );
 }
 
 export default App;

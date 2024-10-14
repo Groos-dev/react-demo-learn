@@ -1,13 +1,15 @@
-import { useRef, useState } from "react";
+import { useEffect } from "react";
 
 function Timer() {
     const [time, setTime] = useState(new Date().getTime());
-    const timer = useRef(null);
-    function startTimer() {
-        timer.current = setInterval(() => {
+    useEffect(() => {
+        const timer = setInterval(() => {
             setTime(new Date().getTime());
-        }, 1000);
-    }
+        });
+        return () => {
+            clearInterval(timer);
+        };
+    });
     function cancelTimer() {
         clearInterval(timer.current);
     }

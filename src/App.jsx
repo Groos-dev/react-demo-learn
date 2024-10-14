@@ -1,13 +1,7 @@
-import { useState } from "react";
 import "./App.css";
-import TodoList from "./TodoList";
+import Timer from "./Timer/Index";
 function App() {
-    const [show, setShow] = useState(true);
-    return (
-        <>
-            <TodoList></TodoList>
-        </>
-    );
+    return <Timer></Timer>;
 }
 
 export default App;
